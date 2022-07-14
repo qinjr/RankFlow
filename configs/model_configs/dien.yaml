@@ -1,0 +1,15 @@
+tmall: {
+  model_name: dien,
+  embed_dim: 32,
+  hidden_dims: [128, 64],
+  dropout: 0.2,
+  use_hist: True,
+}
+
+alipay: {
+  model_name: dien,
+  embed_dim: 32,
+  hidden_dims: [128, 64],
+  dropout: 0.2,
+  use_hist: True,
+}

@@ -1,0 +1,31 @@
+ml-1m: {
+  model_name: wdl,
+  embed_dim: 32,
+  hidden_dims: [128, 64],
+  dropout: 0.5,
+  use_hist: False
+}
+
+tmall: {
+  model_name: wdl,
+  embed_dim: 16,
+  hidden_dims: [128, 64],
+  dropout: 0.5,
+  use_hist: False
+}
+
+alipay: {
+  model_name: wdl,
+  embed_dim: 16,
+  hidden_dims: [128, 64],
+  dropout: 0.5,
+  use_hist: False
+}
+
+tiangong: {
+  model_name: wdl,
+  embed_dim: 32,
+  hidden_dims: [128, 64],
+  dropout: 0.5,
+  use_hist: False
+}

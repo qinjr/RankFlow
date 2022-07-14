@@ -1,0 +1,24 @@
+# important meta data
+dataset_name: tiangong
+neg_sample: 5
+vocabulary_size: 355058 
+uid_col: qid
+iid_col: did
+ufeat_cols: []
+ifeat_cols: [vid]
+user_num_fields: 1
+item_num_fields: 2
+num_fields: 3
+label_col: click
+test_list_len: 10
+
+# dataset directory and file names
+# input data for Dataset
+data_dir: data/tiangong/feateng_data
+train_inter: data/tiangong/feateng_data/train.inter
+# unpv_inter: data/tiangong/feateng_data/unpv.inter
+test_inter: data/tiangong/feateng_data/test.inter
+user_df: data/tiangong/feateng_data/feat.query
+item_df: data/tiangong/feateng_data/feat.doc
+
+# have_hist: False

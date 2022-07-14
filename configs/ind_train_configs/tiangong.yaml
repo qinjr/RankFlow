@@ -1,0 +1,25 @@
+train_mode: point
+loss_type: ll
+learner: sgd
+learning_rate: 1e-3
+l2_norm: 1e-4
+weight_decay: 1e-4
+max_epochs: 200
+eval_step: 1
+clip_grad_norm: {'max_norm': 5, 'norm_type': 2}
+train_batch_size: 256
+eval_batch_size: 256
+device: 'cuda:1'
+checkpoint_dir: saved_models/ind
+eval_mode: all
+list_len: 10
+topks: [1,5]
+num_trials: 2
+continue_metric: AUC
+eval_metric_bigger: True
+seed: 1111
+reproducibility: False
+
+have_hist: False
+
+batch_neg_size: 5

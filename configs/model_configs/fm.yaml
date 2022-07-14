@@ -1,0 +1,24 @@
+ml-1m: {
+  model_name: fm,
+  embed_dim: 32,
+  use_hist: False
+}
+
+tmall: {
+  model_name: fm,
+  embed_dim: 16,
+  use_hist: False
+}
+
+
+alipay: {
+  model_name: fm,
+  embed_dim: 32,
+  use_hist: False
+}
+
+tiangong: {
+  model_name: fm,
+  embed_dim: 32,
+  use_hist: False
+}

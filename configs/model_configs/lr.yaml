@@ -1,0 +1,19 @@
+ml-1m: {
+  model_name: lr,
+  use_hist: False
+}
+
+tmall: {
+  model_name: lr,
+  use_hist: False
+}
+
+alipay: {
+  model_name: lr,
+  use_hist: False
+}
+
+tiangong: {
+  model_name: lr,
+  use_hist: False
+}

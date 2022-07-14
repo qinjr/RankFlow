@@ -1,0 +1,107 @@
+rec_sizes: { # num of items went to next stage
+  'recall': 100,
+  'pre-ranking': 50,
+  'ranking': 10
+}
+score_sizes: {
+  'recall': 200,
+  'pre-ranking': 100,
+  'ranking': 50
+}
+
+batch_sizes: {
+  'recall': 200,
+  'pre-ranking': 100,
+  'ranking': 50
+}
+teacher_batch_size: 256
+
+eval_batch_size: 256
+stage_names: ['recall', 'pre-ranking', 'ranking']
+training_stages_teacher: ['recall', 'pre-ranking', 'ranking']
+training_stages_student: ['recall', 'pre-ranking']
+topk_dict: {
+  'recall': [100],
+  'pre-ranking': [50],
+  'ranking': [10]
+}
+eval_modes: {
+  'recall': 'list',
+  'pre-ranking': 'list',
+  'ranking': 'list'
+}
+involve_bid: False
+# train_mode: point
+loss_type: mse
+learner: {
+  'student': sgd,
+  'teacher': sgd
+}
+icc_learner: sgd
+learning_rate_icc: 1e-4
+learning_rates_student: {
+  'recall': 1e-6,
+  'pre-ranking': 1e-4,
+  'ranking': 1e-5
+}
+learning_rates_teacher: {
+  'recall': 1e-4,
+  'pre-ranking': 5e-4,
+  'ranking': 1e-4
+}
+l2_norm: 1e-4
+weight_decay: 1e-5
+teacher_first: True
+pair_epochs: {
+  'recall': [2, 5, 3], #[pair total epochs (outer for), teacher learning epochs (inner for), student learning epochs (inner for)]
+  'pre-ranking': [2, 25, 3] 
+}
+# for old version: [1,1,1], [6,1,1]
+student_epochs: {
+  'recall': 3,
+  'pre-ranking': 3
+}
+teacher_epochs: {
+  'recall': 5,
+  'pre-ranking': 20, 
+  'ranking': 5 #20
+}
+teacher_way: {
+  'recall': 'normal',
+  'pre-ranking': 'normal',
+  'ranking': 'normal'
+}
+teacher_loss_type: {
+  'pre-ranking': 'bpr_ll',
+  'ranking': 'bpr_ll'
+}
+teacher_rand_size: {
+  'pre-ranking': 30,
+  'ranking': 10
+}
+total_rounds: 2
+max_epochs: 10
+eval_step: 1
+clip_grad_norm: {'max_norm': 5, 'norm_type': 2}
+device: 'cuda:4'
+checkpoint_dir: saved_models/joint
+num_trials: 2
+continue_metrics: {
+  'recall': 'Recall@100',
+  'pre-ranking': 'nDCG@50',
+  'ranking': 'nDCG@10'
+}
+eval_metric_bigger: True
+seed: 1111
+reproducibility: False
+
+have_hist: False
+alphas: {
+  'recall': 0.2, #0
+  'pre-ranking': 0.5
+}
+use_logit: False
+icc_batch_size: 256
+
+teacher_pos_data: data/ml-1m/feateng_data/train_set_point_pos.pkl
+

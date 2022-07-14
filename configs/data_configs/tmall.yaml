@@ -1,0 +1,22 @@
+# important meta data
+dataset_name: tmall
+neg_sample: 20
+vocabulary_size: 723082 
+uid_col: uid
+iid_col: iid
+ufeat_cols: [aid, gid]
+ifeat_cols: [cid, sid, bid]
+user_num_fields: 3
+item_num_fields: 4
+num_fields: 7
+label_col: ranking
+test_list_len: 100
+
+# dataset directory and file names
+# input data for Dataset
+data_dir: data/tmall/feateng_data
+train_inter: data/tmall/feateng_data/train.inter
+unpv_inter: data/tmall/feateng_data/unpv.inter
+test_inter: data/tmall/feateng_data/test.inter
+user_df: data/tmall/feateng_data/feat.user
+item_df: data/tmall/feateng_data/feat.item

@@ -1,0 +1,24 @@
+# important meta data
+dataset_name: ml-1m
+neg_sample: 10
+vocabulary_size: 13233 
+uid_col: uid
+iid_col: iid
+ufeat_cols: [gid, aid, oid, zipcode]
+ifeat_cols: [cid]
+user_num_fields: 5
+item_num_fields: 2
+num_fields: 7
+label_col: rating
+test_list_len: 50
+
+# dataset directory and file names
+# input data for Dataset
+data_dir: data/ml-1m/feateng_data
+train_inter: data/ml-1m/feateng_data/train.inter
+unpv_inter: data/ml-1m/feateng_data/unpv.inter
+test_inter: data/ml-1m/feateng_data/test.inter
+user_df: data/ml-1m/feateng_data/feat.user
+item_df: data/ml-1m/feateng_data/feat.item
+
+# have_hist: False

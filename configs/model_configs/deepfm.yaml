@@ -1,0 +1,31 @@
+ml-1m: {
+  model_name: deepfm,
+  embed_dim: 32,
+  hidden_dims: [128, 64],
+  dropout: 0.9,
+  use_hist: False
+}
+
+tmall: {
+  model_name: deepfm,
+  embed_dim: 32,
+  hidden_dims: [128, 64],
+  dropout: 0.2,
+  use_hist: False
+}
+
+alipay: {
+  model_name: deepfm,
+  embed_dim: 32,
+  hidden_dims: [128, 64],
+  dropout: 0.2,
+  use_hist: False
+}
+
+tiangong: {
+  model_name: deepfm,
+  embed_dim: 32,
+  hidden_dims: [128, 64],
+  dropout: 0.2,
+  use_hist: False
+}

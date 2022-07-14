@@ -1,0 +1,110 @@
+rec_sizes: { # num of items went to next stage
+  'recall': 200,
+  'pre-ranking': 50,
+  'ranking': 10
+}
+score_sizes: {
+  'recall': 300,
+  'pre-ranking': 200,
+  'ranking': 50
+}
+
+batch_sizes: {
+  'recall': 3000,
+  'pre-ranking': 2000,
+  'ranking': 500
+}
+teacher_batch_size: 500
+
+eval_batch_size: 6000
+stage_names: ['recall', 'pre-ranking', 'ranking']
+training_stages_teacher: ['recall', 'pre-ranking', 'ranking']
+training_stages_student: ['recall', 'pre-ranking']
+topk_dict: {
+  'recall': [200],
+  'pre-ranking': [50],
+  'ranking': [10]
+}
+eval_modes: {
+  'recall': 'list',
+  'pre-ranking': 'list',
+  'ranking': 'list'
+}
+involve_bid: False
+
+# train_mode: point
+loss_type: mse
+learner: {
+  'student': sgd,
+  'teacher': sgd
+}
+icc_learner: sgd
+learning_rate_icc: 1e-4
+learning_rates_student: {
+  'recall': 1e-7,
+  'pre-ranking': 1e-7,
+  'ranking': 1e-7
+}
+learning_rates_teacher: {
+  'recall': 1e-7,
+  'pre-ranking': 1e-7,
+  'ranking': 1e-7,
+}
+l2_norm: 1e-4
+weight_decay: 1e-4
+teacher_first: True
+pair_epochs: {
+  'recall': [3, 0, 1], #[pair total epochs (outer for), teacher learning epochs (inner for), student learning epochs (inner for)]
+  'pre-ranking': [3, 1, 1]
+}
+student_epochs: {
+  'recall': 1,
+  'pre-ranking': 1
+}
+teacher_epochs: {
+  'recall': 2,
+  'pre-ranking': 1,
+  'ranking': 1
+}
+teacher_way: {
+  'recall': 'normal',
+  'pre-ranking': 'normal',
+  'ranking': 'normal'
+}
+teacher_loss_type: {
+  'recall': 'bpr_ll',
+  'pre-ranking': 'bpr_ll',
+  'ranking': 'bpr_ll'
+}
+teacher_rand_size: {
+  'recall': 50,
+  'pre-ranking': 30,
+  'ranking': 10
+}
+total_rounds: 6
+max_epochs: 10
+eval_step: 1
+clip_grad_norm: {'max_norm': 2, 'norm_type': 2}
+device: 'cuda:0'
+checkpoint_dir: saved_models/joint
+num_trials: 2
+continue_metrics: {
+  'recall': 'Recall@100',
+  'pre-ranking': 'nDCG@50',
+  'ranking': 'nDCG@10'
+}
+eval_metric_bigger: True
+seed: 1111
+reproducibility: False
+
+have_hist: True
+hist_dict: data/tmall/feateng_data/hist_dict_
+hist_len_dict: data/tmall/feateng_data/hist_len_dict_
+teacher_pos_data: data/tmall/feateng_data/train_set_point_pos.pkl
+
+alphas: {
+  'recall': 0.5,
+  'pre-ranking': 0.9
+}
+use_logit: False
+icc_batch_size: 1024
