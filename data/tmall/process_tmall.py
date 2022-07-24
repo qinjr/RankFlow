@@ -218,9 +218,9 @@ def gen_feat_dfs(remapped_file, user_df_file, item_df_file):
 
 
 if __name__ == '__main__':
-    # join_files('raw_data/user_info_format1.csv','raw_data/user_log_format1.csv', 'feateng_data/all.inter')
-    # feature_remap('feateng_data/all.inter', 'feateng_data/remapped.inter')
-    # gen_feat_dfs('feateng_data/remapped.inter', 'feateng_data/feat.user', 'feateng_data/feat.item')
+    join_files('raw_data/user_info_format1.csv','raw_data/user_log_format1.csv', 'feateng_data/all.inter')
+    feature_remap('feateng_data/all.inter', 'feateng_data/remapped.inter')
+    gen_feat_dfs('feateng_data/remapped.inter', 'feateng_data/feat.user', 'feateng_data/feat.item')
     start = time.time()
     split('feateng_data/remapped.inter', 'feateng_data/train.inter', 'feateng_data/unpv.inter', 'feateng_data/test.inter','feateng_data/feat.user','feateng_data/feat.item')
     end = time.time()

@@ -74,9 +74,9 @@ def join_files(file1,file2,file3,query_df_file,doc_df_file):
 
 if __name__ == '__main__':
     start = time.time()
-    #generate_data('feateng_data/train_per_query.txt', 'feateng_data/train.inter')
-    #generate_data('feateng_data/dev_per_query.txt', 'feateng_data/dev.inter')
-    #generate_data('feateng_data/test_per_query.txt', 'feateng_data/test.inter')
+    generate_data('feateng_data/train_per_query.txt', 'feateng_data/train.inter')
+    generate_data('feateng_data/dev_per_query.txt', 'feateng_data/dev.inter')
+    generate_data('feateng_data/test_per_query.txt', 'feateng_data/test.inter')
     join_files('feateng_data/train.inter','feateng_data/dev.inter','feateng_data/test.inter','feateng_data/feat.query','feateng_data/feat.doc')
     
     end = time.time()
