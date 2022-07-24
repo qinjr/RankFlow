@@ -129,7 +129,6 @@ dmypy.json
 .pyre/
 
 # Custom ignore files
-data/
 log/
 saved_models/
 log_tensorboard/
