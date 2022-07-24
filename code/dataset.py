@@ -289,14 +289,6 @@ if __name__ == '__main__':
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)
     
-    dataset = IndDataset(config, 'train', 'point_pos', False, True)
-    t = dataset.get_data()
-    for i in t:
-        if i is not None:
-            print(i.shape)
-        else:
-            print('no user hist')
-    print('---------------------------')
 
     dataset = IndDataset(config, 'train', 'point', False, True)
     t = dataset.get_data()
@@ -307,46 +299,6 @@ if __name__ == '__main__':
             print('no user hist')
     print('---------------------------')
 
-    # dataset = IndDataset(config, 'train', 'pair', False, True)
-    # t = dataset.get_data()
-    # for i in t:
-    #     if i is not None:
-    #         print(i.shape)
-    #     else:
-    #         print('no user hist')
-    # print('---------------------------')
-
-    # # dataset = IndDataset(config, 'train', 'pair', True, True)
-    # # t = dataset.get_data()
-    # # for i in t:
-    # #     if i is not None:
-    # #         print(i.shape)
-    # #     else:
-    # #         print('no user hist')
-    # # print('---------------------------')
-
 
     dataset = IndDataset(config, 'test', 'point', False, True)
-    # dataset = IndDataset(config, 'unpv', 'point', False, True)
     dataset = IndDataset(config, 'test', 'list', False, True)
-    # dataset = IndDataset(config, 'unpv', 'list', False, True)
-
-
-    # train_dataset = IndDataset(config, 'train', 'point', False)
-    # data_tuple = train_dataset.get_data()
-    # x_user, x_item, y = data_tuple
-    # print(x_user.shape)
-    # print(x_item.shape)
-    # print(y.shape)
-
-    # for i in range(config['user_num_fields']):
-    #     print('min value of feature {} is {}'.format(i, torch.min(x_user[:,i])))
-    #     print(torch.max(x_user[:,i]))
-    #     print(torch.unique(x_user[:,i]).shape)
-    # for i in range(config['item_num_fields']):
-    #     print(torch.min(x_item[:,i]))
-    #     print(torch.max(x_item[:,i]))
-    #     print(torch.unique(x_item[:,i]).shape)
-
-    # print(y[y==0].shape)
-    # print(y[y==1].shape)
