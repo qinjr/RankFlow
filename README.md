@@ -11,6 +11,11 @@ python process_[dataset_name].py
 ```
 in the corresponding directory.
 
+After the preprocessing, execute the dataset generation process in `code` folder as
+```
+python dataset.py -d [dataset_name]
+```
+
 
 ## Warmup Training (Independent Training Baseline)
 To execute the independent training on the impression (displayed) data, use
