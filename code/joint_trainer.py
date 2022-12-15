@@ -505,12 +505,14 @@ class jointTrainer(AbsJointTrainer):
             dl_sample_t = Dataloader(data_sample_t, self.teacher_batch_size, shuffle=True)
             
 
-            if stage_name == 'recall':
-                x_user_neg, x_item_neg, label_neg = self._get_teacher_neg_data(data_t)
-                x_user_pos, x_item_pos, label_pos = self._get_teacher_pos_data()
-            else:
-                x_user_neg, x_item_neg, label_neg = self._get_teacher_neg_data(data_t)
-                x_user_pos, x_item_pos, label_pos = self._get_teacher_pos_data_sample(int(x_user_neg.shape[0] / 4))
+            x_user_neg, x_item_neg, label_neg = self._get_teacher_neg_data(data_t)
+            x_user_pos, x_item_pos, label_pos = self._get_teacher_pos_data()
+            # if stage_name == 'recall':
+            #     x_user_neg, x_item_neg, label_neg = self._get_teacher_neg_data(data_t)
+            #     x_user_pos, x_item_pos, label_pos = self._get_teacher_pos_data()
+            # else:
+            #     x_user_neg, x_item_neg, label_neg = self._get_teacher_neg_data(data_t)
+            #     x_user_pos, x_item_pos, label_pos = self._get_teacher_pos_data_sample(int(x_user_neg.shape[0] / 4))
                 
             data_t_all = [np.concatenate((x_user_pos, x_user_neg), axis=0), np.concatenate((x_item_pos, x_item_neg), axis=0), np.concatenate((label_pos, label_neg), axis=0)]
             dl_t_all = Dataloader(data_t_all, self.teacher_batch_size, shuffle=True)
